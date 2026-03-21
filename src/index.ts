@@ -46,10 +46,10 @@ function symbolLayer() {
       map('r').to('8', ['left_shift']),            // *
       map('t').to('2', ['left_shift']),            // @
 
-      map('y').to('1', ['left_shift']),            // !
-      map('u').to('7', ['left_shift']),            // &
+      map('y').to('7', ['left_shift']),            // &
+      map('u').to('1', ['left_shift']),            // !
       map('i').to('hyphen'),                        // -
-      map('o').to('semicolon', ['left_shift']),    // :
+      map('o').to('slash'),                         // /
       map('p').to('6', ['left_shift']),            // ^
 
       // ホームロウ: 左=開く、右=閉じる
@@ -72,10 +72,10 @@ function symbolLayer() {
       map('v').to('backslash', ['left_shift']),    // |
       map('b').to('grave_accent_and_tilde'),        // `
 
-      map('n').to('backslash'),                     // \
+      map('n').to('semicolon', ['left_shift']),       // :
       map('m').to('quote', ['left_shift']),         // "
       map('comma').to('semicolon'),                 // ;
-      map('period').to('slash'),                    // /
+      map('period').to('backslash'),                // \
     ]),
   ])
 }
