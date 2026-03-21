@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>39key-layer Cheatsheet</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 24px;
+  }
+  h1 {
+    text-align: center;
+    color: #e94560;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  .layer-section {
+    margin-bottom: 40px;
+  }
+  .layer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  .layer-title.base { background: #16213e; color: #0f3460; border: 2px solid #0f3460; color: #5dade2; }
+  .layer-title.l1 { background: #1a1a2e; border: 2px solid #e94560; color: #e94560; }
+  .layer-title.l2 { background: #1a1a2e; border: 2px solid #00b894; color: #00b894; }
+  .layer-title.l3 { background: #1a1a2e; border: 2px solid #fdcb6e; color: #fdcb6e; }
+  .keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+  .row {
+    display: flex;
+    gap: 6px;
+  }
+  .key {
+    width: 64px;
+    height: 56px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #333;
+    background: #16213e;
+    position: relative;
+  }
+  .key .label { font-size: 14px; }
+  .key .sublabel {
+    font-size: 9px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .key.wide { width: 72px; }
+  .key.space { width: 120px; }
+  .key.highlight-red { border-color: #e94560; background: #2d1b2e; }
+  .key.highlight-green { border-color: #00b894; background: #1b2d2a; }
+  .key.highlight-yellow { border-color: #fdcb6e; background: #2d2a1b; }
+  .key.highlight-blue { border-color: #5dade2; background: #1b2a2d; }
+  .key.modifier { background: #0f3460; border-color: #5dade2; }
+  .key.trigger { background: #e94560; border-color: #e94560; color: #fff; }
+  .key.trigger-green { background: #00b894; border-color: #00b894; color: #fff; }
+  .key.trigger-yellow { background: #fdcb6e; border-color: #fdcb6e; color: #1a1a2e; }
+  .key.empty { background: #111; border-color: #222; color: #444; }
+  .key.nav { background: #1b2d2a; border-color: #00b894; }
+  .thumb-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #888;
+  }
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 32px 0;
+  }
+  .thumb-info {
+    margin-top: 24px;
+    background: #16213e;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .thumb-info h3 {
+    color: #5dade2;
+    margin-bottom: 12px;
+  }
+  .thumb-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .thumb-table th, .thumb-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    font-size: 13px;
+  }
+  .thumb-table th { color: #888; }
+  .thumb-table .tap { color: #00b894; }
+  .thumb-table .hold { color: #e94560; }
+</style>
+</head>
+<body>
+
+<h1>39key-layer Cheatsheet</h1>
+<p class="subtitle">Karabiner-Elements | MacBook Pro JIS</p>
+
+<!-- ========== Base Layer ========== -->
+<div class="layer-section">
+  <span class="layer-title base">Base Layer</span>
+  <div class="keyboard">
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Tab</span></div>
+      <div class="key"><span class="label">Q</span></div>
+      <div class="key"><span class="label">W</span></div>
+      <div class="key"><span class="label">E</span></div>
+      <div class="key"><span class="label">R</span></div>
+      <div class="key"><span class="label">T</span></div>
+      <div class="key" style="margin-left:24px"><span class="label">Y</span></div>
+      <div class="key"><span class="label">U</span></div>
+      <div class="key"><span class="label">I</span></div>
+      <div class="key"><span class="label">O</span></div>
+      <div class="key"><span class="label">P</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Ctrl</span></div>
+      <div class="key"><span class="label">A</span></div>
+      <div class="key"><span class="label">S</span></div>
+      <div class="key"><span class="label">D</span></div>
+      <div class="key"><span class="label">F</span></div>
+      <div class="key"><span class="label">G</span></div>
+      <div class="key" style="margin-left:24px"><span class="label">H</span></div>
+      <div class="key"><span class="label">J</span></div>
+      <div class="key"><span class="label">K</span></div>
+      <div class="key"><span class="label">L</span></div>
+      <div class="key"><span class="label">;</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Shift</span></div>
+      <div class="key"><span class="label">Z</span></div>
+      <div class="key"><span class="label">X</span></div>
+      <div class="key"><span class="label">C</span></div>
+      <div class="key"><span class="label">V</span></div>
+      <div class="key"><span class="label">B</span></div>
+      <div class="key" style="margin-left:24px"><span class="label">N</span></div>
+      <div class="key"><span class="label">M</span></div>
+      <div class="key"><span class="label">,</span></div>
+      <div class="key"><span class="label">.</span></div>
+      <div class="key"><span class="label">/</span></div>
+    </div>
+    <div class="thumb-row">
+      <div class="key highlight-yellow"><span class="label">Opt</span><span class="sublabel">L3 hold</span></div>
+      <div class="key highlight-blue"><span class="label">Cmd</span><span class="sublabel">英数 tap</span></div>
+      <div class="key trigger"><span class="label">英数</span><span class="sublabel">BS tap/L1</span></div>
+      <div class="key space"><span class="label">Space</span></div>
+      <div class="key trigger-green"><span class="label">かな</span><span class="sublabel">Enter tap/L2</span></div>
+      <div class="key highlight-blue"><span class="label">Cmd</span><span class="sublabel">かな tap</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== Layer 1: Symbols ========== -->
+<div class="layer-section">
+  <span class="layer-title l1">Layer 1 - Symbols (英数 hold)</span>
+  <div class="keyboard">
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Tab</span></div>
+      <div class="key highlight-red"><span class="label">#</span></div>
+      <div class="key highlight-red"><span class="label">_</span></div>
+      <div class="key highlight-red"><span class="label">+</span></div>
+      <div class="key highlight-red"><span class="label">*</span></div>
+      <div class="key highlight-red"><span class="label">@</span></div>
+      <div class="key highlight-red" style="margin-left:24px"><span class="label">!</span></div>
+      <div class="key highlight-red"><span class="label">&</span></div>
+      <div class="key highlight-red"><span class="label">-</span></div>
+      <div class="key highlight-red"><span class="label">:</span></div>
+      <div class="key highlight-red"><span class="label">^</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Ctrl</span></div>
+      <div class="key highlight-red"><span class="label">(</span><span class="sublabel">open</span></div>
+      <div class="key highlight-red"><span class="label">{</span><span class="sublabel">open</span></div>
+      <div class="key highlight-red"><span class="label">[</span><span class="sublabel">open</span></div>
+      <div class="key highlight-red"><span class="label">=</span></div>
+      <div class="key highlight-red"><span class="label">&lt;</span><span class="sublabel">open</span></div>
+      <div class="key highlight-red" style="margin-left:24px"><span class="label">&gt;</span><span class="sublabel">close</span></div>
+      <div class="key highlight-red"><span class="label">'</span></div>
+      <div class="key highlight-red"><span class="label">]</span><span class="sublabel">close</span></div>
+      <div class="key highlight-red"><span class="label">}</span><span class="sublabel">close</span></div>
+      <div class="key highlight-red"><span class="label">)</span><span class="sublabel">close</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Shift</span></div>
+      <div class="key highlight-red"><span class="label">$</span></div>
+      <div class="key highlight-red"><span class="label">%</span></div>
+      <div class="key highlight-red"><span class="label">~</span></div>
+      <div class="key highlight-red"><span class="label">|</span></div>
+      <div class="key highlight-red"><span class="label">`</span></div>
+      <div class="key highlight-red" style="margin-left:24px"><span class="label">\</span></div>
+      <div class="key highlight-red"><span class="label">"</span></div>
+      <div class="key highlight-red"><span class="label">;</span></div>
+      <div class="key highlight-red"><span class="label">/</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== Layer 2: Num + Nav ========== -->
+<div class="layer-section">
+  <span class="layer-title l2">Layer 2 - Numbers & Nav (かな hold)</span>
+  <div class="keyboard">
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Tab</span></div>
+      <div class="key highlight-green"><span class="label">1</span></div>
+      <div class="key highlight-green"><span class="label">2</span></div>
+      <div class="key highlight-green"><span class="label">3</span></div>
+      <div class="key highlight-green"><span class="label">4</span></div>
+      <div class="key highlight-green"><span class="label">5</span></div>
+      <div class="key highlight-green" style="margin-left:24px"><span class="label">6</span></div>
+      <div class="key highlight-green"><span class="label">7</span></div>
+      <div class="key highlight-green"><span class="label">8</span></div>
+      <div class="key highlight-green"><span class="label">9</span></div>
+      <div class="key highlight-green"><span class="label">0</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Ctrl</span></div>
+      <div class="key modifier"><span class="label">Sft</span></div>
+      <div class="key modifier"><span class="label">Ctrl</span></div>
+      <div class="key modifier"><span class="label">Alt</span></div>
+      <div class="key modifier"><span class="label">Cmd</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key nav" style="margin-left:24px"><span class="label">&larr;</span></div>
+      <div class="key nav"><span class="label">&darr;</span></div>
+      <div class="key nav"><span class="label">&uarr;</span></div>
+      <div class="key nav"><span class="label">&rarr;</span></div>
+      <div class="key highlight-green"><span class="label">BS</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Shift</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key nav" style="margin-left:24px"><span class="label">Home</span></div>
+      <div class="key nav"><span class="label">PgDn</span></div>
+      <div class="key nav"><span class="label">PgUp</span></div>
+      <div class="key nav"><span class="label">End</span></div>
+      <div class="key highlight-green"><span class="label">Del</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== Layer 3: Fn + Screenshot ========== -->
+<div class="layer-section">
+  <span class="layer-title l3">Layer 3 - Fn Keys & Screenshots (Opt左 hold)</span>
+  <div class="keyboard">
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Tab</span></div>
+      <div class="key highlight-yellow"><span class="label">F1</span></div>
+      <div class="key highlight-yellow"><span class="label">F2</span></div>
+      <div class="key highlight-yellow"><span class="label">F3</span></div>
+      <div class="key highlight-yellow"><span class="label">F4</span></div>
+      <div class="key highlight-yellow"><span class="label">F5</span></div>
+      <div class="key highlight-yellow" style="margin-left:24px"><span class="label">F6</span></div>
+      <div class="key highlight-yellow"><span class="label">F7</span></div>
+      <div class="key highlight-yellow"><span class="label">F8</span></div>
+      <div class="key highlight-yellow"><span class="label">F9</span></div>
+      <div class="key highlight-yellow"><span class="label">F10</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Ctrl</span></div>
+      <div class="key modifier"><span class="label">Sft</span></div>
+      <div class="key modifier"><span class="label">Ctrl</span></div>
+      <div class="key modifier"><span class="label">Alt</span></div>
+      <div class="key modifier"><span class="label">Cmd</span></div>
+      <div class="key highlight-yellow"><span class="label">F11</span></div>
+      <div class="key highlight-yellow" style="margin-left:24px"><span class="label">F12</span></div>
+      <div class="key trigger-yellow"><span class="label">SS1</span><span class="sublabel">全画面</span></div>
+      <div class="key trigger-yellow"><span class="label">SS2</span><span class="sublabel">範囲</span></div>
+      <div class="key trigger-yellow"><span class="label">SS5</span><span class="sublabel">scroll</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+    </div>
+    <div class="row">
+      <div class="key wide modifier"><span class="label">Shift</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty" style="margin-left:24px"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+      <div class="key empty"><span class="label">-</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ========== Thumb Keys ========== -->
+<div class="thumb-info">
+  <h3>Thumb Keys</h3>
+  <table class="thumb-table">
+    <tr><th>Key</th><th>Tap</th><th>Hold</th></tr>
+    <tr><td>Opt Left</td><td class="tap">Alt</td><td class="hold">Layer 3 (Fn)</td></tr>
+    <tr><td>Cmd Left</td><td class="tap">英数 (IME)</td><td class="hold">Cmd</td></tr>
+    <tr><td>英数</td><td class="tap">Backspace</td><td class="hold">Layer 1 (Symbols)</td></tr>
+    <tr><td>Space</td><td class="tap" colspan="2">Space</td></tr>
+    <tr><td>かな</td><td class="tap">Enter</td><td class="hold">Layer 2 (Num/Nav)</td></tr>
+    <tr><td>Cmd Right</td><td class="tap">かな (IME)</td><td class="hold">Cmd</td></tr>
+  </table>
+</div>
+
+<div class="legend" style="margin-top: 32px;">
+  <div class="legend-item"><div class="legend-color" style="background:#2d1b2e;border-color:#e94560"></div>Layer 1 (Symbols)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#1b2d2a;border-color:#00b894"></div>Layer 2 (Num/Nav)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#2d2a1b;border-color:#fdcb6e"></div>Layer 3 (Fn/SS)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#0f3460;border-color:#5dade2"></div>Modifier</div>
+  <div class="legend-item"><div class="legend-color" style="background:#111;border-color:#222"></div>Empty</div>
+</div>
+
+<p class="subtitle" style="margin-top: 32px;">元に戻す: Karabiner-Elements Menu Bar → Default profile</p>
+
+</body>
+</html>
