@@ -119,6 +119,7 @@ function navNumLayer() {
       map('x').to('left_control'),
       map('c').to('left_option'),
       map('v').to('left_command'),
+      map('b').to('v', ['left_command', 'left_shift']),  // Clipy (Cmd+Shift+V)
 
       // ホームロウ右: ナビ (vim風)
       map('h').to('left_arrow'),
