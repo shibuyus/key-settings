@@ -101,17 +101,24 @@ function navNumLayer() {
       map('e').to('3'),
       map('r').to('4'),
       map('t').to('5'),
-      map('y').to('6'),
-      map('u').to('7'),
-      map('i').to('8'),
-      map('o').to('9'),
-      map('p').to('0'),
+      map('y').to('z', ['left_command']),             // Undo
+      map('u').to('x', ['left_command']),             // Cut
+      map('i').to('c', ['left_command']),             // Copy
+      map('o').to('v', ['left_command']),             // Paste
+      map('p').to('z', ['left_command', 'left_shift']), // Redo
 
-      // ホームロウ左: Modifier
-      map('a').to('left_shift'),
-      map('s').to('left_control'),
-      map('d').to('left_option'),
-      map('f').to('left_command'),
+      // ホームロウ左: 数字（重複配置）
+      map('a').to('6'),
+      map('s').to('7'),
+      map('d').to('8'),
+      map('f').to('9'),
+      map('g').to('0'),
+
+      // 下段左: Modifier
+      map('z').to('left_shift'),
+      map('x').to('left_control'),
+      map('c').to('left_option'),
+      map('v').to('left_command'),
 
       // ホームロウ右: ナビ (vim風)
       map('h').to('left_arrow'),
