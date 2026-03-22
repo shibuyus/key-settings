@@ -76,6 +76,7 @@ function symbolLayer() {
       map('m').to('quote', ['left_shift']),         // "
       map('comma').to('semicolon'),                 // ;
       map('period').to('backslash'),                // \
+      map('slash').to('slash', ['left_shift']),     // ?
     ]),
   ])
 }
