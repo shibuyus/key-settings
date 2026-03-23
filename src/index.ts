@@ -139,17 +139,17 @@ function navNumLayer() {
 }
 
 // ============================================================
-// レイヤー3: Opt左長押し → Fキー・スクショ
+// レイヤー3: Tab長押し → Fキー・スクショ
 // ============================================================
 function fnLayer() {
   const v = 'fn-layer'
 
-  return rule('Fn layer - left_option hold').manipulators([
-    // Opt左: 長押し=レイヤー3 ON、離す=OFF
-    map('left_option')
+  return rule('Fn layer - tab hold').manipulators([
+    // Tab: 長押し=レイヤー3 ON、離す=OFF、タップ=Tab
+    map('tab')
       .toVar(v, 1)
       .toAfterKeyUp(toSetVar(v, 0))
-      .toIfAlone('left_option'),
+      .toIfAlone('tab'),
 
     ...withCondition(ifVar(v, 1))([
       // 上段: F1-F5, F6-F10
